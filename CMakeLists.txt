@@ -8,6 +8,10 @@ set(OpenGL_GL_PREFERENCE GLVND)  # Prefer modern GLVND over legacy OpenGL
 find_package(OpenGL REQUIRED)  # Locate the OpenGL library
 find_package(X11 REQUIRED)  # Locate the X11 library (for windowing support on Linux)
 
+# Enforce C99 standard
+set(CMAKE_C_STANDARD 99)  # Set the C standard to C99
+set(CMAKE_C_STANDARD_REQUIRED ON)  # Ensure the C standard is strictly enforced
+
 # Add the executable
 add_executable(gl3 gl3.c)  # Create an executable named 'gl3' from 'gl3.cxx'
 
